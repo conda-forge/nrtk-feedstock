@@ -1,5 +1,5 @@
 {% set name = "nrtk" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/nrtk-{{ version }}.tar.gz
-  sha256: 9bc5a8e81955fe57fa9cd6abcd11ed1314bf5f6570fd46b968a435465531d3ad
+  sha256: d8f25ba0e6c61b7bbc90af5d3d7109b8338fbe73bcf6dcca3ab1447989ed82c2
 
 build:
   noarch: python
@@ -44,9 +44,9 @@ test:
 about:
   home: https://pypi.org/project/nrtk/
   summary: |
-      The nrtk package is an open source toolkit for evaluating the natural robustness of
-      computer vision algorithms to various perturbations, including sensor-specific
-      changes to camera focal length, aperture diameter, etc
+    The nrtk package is an open source toolkit for evaluating the natural robustness of
+    computer vision algorithms to various perturbations, including sensor-specific
+    changes to camera focal length, aperture diameter, etc
   license: Apache-2.0
   license_file: LICENSE
 
