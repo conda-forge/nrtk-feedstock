@@ -21,7 +21,7 @@ requirements:
     - poetry-core
   run:
     - python >=3.8.1,<4.0.0
-    - numpy >=1.23.1,<2.0.0
+    - numpy >=1.23.1,<1.25
     - opencv >=4.6
     - pillow >=10.2.0
     - scikit-image >=0.21
