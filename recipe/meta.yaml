@@ -1,5 +1,5 @@
 {% set name = "nrtk" %}
-{% set version = "0.3.2" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/nrtk-{{ version }}.tar.gz
-  sha256: 6ba616015db55f6ddbe5b95f7de4f9295d9c8f24658b59c92c070629ee21af82
+  sha256: 75f957353ef56c03a1c919a37c577350e1800efff1091ecf4a8908438508a7b3
 
 build:
   noarch: python
@@ -21,16 +21,16 @@ requirements:
     - poetry-core
   run:
     - python >=3.8.1,<4.0.0
-    - numpy >=1.18
+    - numpy >=1.23.1,<1.25
     - opencv >=4.6
-    - pillow >=10.0
+    - pillow >=10.2.0
     - scikit-image >=0.21
     - smqtk-classifier >=0.19.0
     - smqtk-core >=0.19
     - smqtk-detection >=0.19.0
     - smqtk-image-io >=0.17.1
     - tqdm >=4.64
-    - pybsm >=0.1.1,<0.2.0
+    - pybsm >=0.2.0
     - pycocotools >=2.0.6
 
 test:
