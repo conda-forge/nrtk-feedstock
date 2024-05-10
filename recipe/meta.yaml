@@ -10,7 +10,6 @@ source:
   sha256: 6d941e95797be4a5a5856c7bd3c90b914d6ea7e12290efc8f1c7ea77b0e784b1
 
 build:
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
@@ -21,7 +20,10 @@ requirements:
     - poetry-core
   run:
     - python >=3.8.1,<4.0.0
-    - numpy >=1.23.1,<1.25
+    - numpy >=1.23.1,<1.25  # [py<312]
+    - numpy >=1.26  # [py>=3.12]
+    - scikit-image >=0.21,<0.22  # [py<312]
+    - scikit-image >=0.22  # [py>=312]
     - opencv >=4.6
     - pillow >=10.2.0
     - scikit-image >=0.21,<0.22
@@ -32,9 +34,6 @@ requirements:
     - tqdm >=4.64
     - pybsm >=0.2.0
     - pycocotools >=2.0.6
-  run_constrained:
-    - numpy >=1.26=py312_0
-    - scikit-image >=0.22=py312_0
 test:
   imports:
     - nrtk
