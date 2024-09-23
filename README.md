@@ -127,6 +127,8 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-nrtk-green.svg)](https://anaconda.org/conda-forge/nrtk) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/nrtk.svg)](https://anaconda.org/conda-forge/nrtk) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/nrtk.svg)](https://anaconda.org/conda-forge/nrtk) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/nrtk.svg)](https://anaconda.org/conda-forge/nrtk) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-nrtk--graphics-green.svg)](https://anaconda.org/conda-forge/nrtk-graphics) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/nrtk-graphics.svg)](https://anaconda.org/conda-forge/nrtk-graphics) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/nrtk-graphics.svg)](https://anaconda.org/conda-forge/nrtk-graphics) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/nrtk-graphics.svg)](https://anaconda.org/conda-forge/nrtk-graphics) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-nrtk--headless-green.svg)](https://anaconda.org/conda-forge/nrtk-headless) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/nrtk-headless.svg)](https://anaconda.org/conda-forge/nrtk-headless) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/nrtk-headless.svg)](https://anaconda.org/conda-forge/nrtk-headless) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/nrtk-headless.svg)](https://anaconda.org/conda-forge/nrtk-headless) |
 
 Installing nrtk
 ===============
@@ -138,16 +140,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `nrtk` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `nrtk, nrtk-graphics, nrtk-headless` can be installed with `conda`:
 
 ```
-conda install nrtk
+conda install nrtk nrtk-graphics nrtk-headless
 ```
 
 or with `mamba`:
 
 ```
-mamba install nrtk
+mamba install nrtk nrtk-graphics nrtk-headless
 ```
 
 It is possible to list all of the versions of `nrtk` available on your platform with `conda`:
