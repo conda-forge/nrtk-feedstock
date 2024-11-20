@@ -71,7 +71,7 @@ outputs:
         - pip
 
 about:
-  home: https://pypi.io/project/nrtk/
+  home: https://pypi.org/project/nrtk/
   summary: |
     The nrtk package is an open source toolkit for evaluating the natural robustness of
     computer vision algorithms to various perturbations, including sensor-specific
