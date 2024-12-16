@@ -45,7 +45,7 @@ outputs:
         - python
       run:
         - python
-        - pybsm-graphics >=0.8.0
+        - pybsm >=0.10.1
         - {{ pin_subpackage('nrtk', exact=True) }}
     test:
       imports:
@@ -60,7 +60,7 @@ outputs:
         - python
       run:
         - python
-        - pybsm-headless >=0.8.0
+        - pybsm >=0.10.1
         - {{ pin_subpackage('nrtk', exact=True) }}
     test:
       imports:
