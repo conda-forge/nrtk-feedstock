@@ -22,6 +22,7 @@ requirements:
     - python
     - numpy >=1.22,<2.0
     - pillow >=10.3.0
+    - pybsm >=0.10.1
     - setuptools >=65.6.1
     - scikit-image >=0.20
     - smqtk-classifier >=0.19.0
@@ -47,7 +48,7 @@ outputs:
         - python
       run:
         - python
-        - pybsm >=0.10.1
+        - py-opencv >=4.6.0
         - {{ pin_subpackage('nrtk', exact=True) }}
     test:
       imports:
@@ -62,7 +63,7 @@ outputs:
         - python
       run:
         - python
-        - pybsm >=0.10.1
+        - opencv >=4.6.0
         - {{ pin_subpackage('nrtk', exact=True) }}
     test:
       imports:
