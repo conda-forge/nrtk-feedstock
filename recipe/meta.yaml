@@ -72,6 +72,7 @@ outputs:
         - pip check
       requires:
         - pip
+        - libopencv *=headless*  # [not win]
 
 about:
   home: https://pypi.org/project/nrtk/
