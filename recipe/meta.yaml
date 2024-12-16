@@ -53,6 +53,7 @@ outputs:
     test:
       imports:
         - nrtk
+        - cv2
       commands:
         - pip check
       requires:
@@ -68,6 +69,7 @@ outputs:
     test:
       imports:
         - nrtk
+        - cv2
       commands:
         - pip check
       requires:
