@@ -1,5 +1,5 @@
 {% set name = "nrtk" %}
-{% set version = "0.17.0" %}
+{% set version = "0.18.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nrtk-{{ version }}.tar.gz
-  sha256: e636c450b535ebb10ce9a8bf9010badd501dca3e8ccb6c291544da03b6768197
+  sha256: 0d5f8755b22d2a8f6b4d1b47ff00ac8e763d9074a06fadf5ea92dfd3683feb5d
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -17,12 +17,12 @@ requirements:
   host:
     - python
     - pip
-    - poetry-core
+    - poetry-core <2.0
   run:
     - python
     - numpy >=1.22,<2.0
     - pillow >=10.3.0
-    - pybsm >=0.10.1
+    - pybsm >=0.10.2
     - setuptools >=65.6.1
     - scikit-image >=0.20
     - smqtk-classifier >=0.19.0
