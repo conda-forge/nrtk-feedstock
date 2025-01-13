@@ -17,12 +17,12 @@ requirements:
   host:
     - python
     - pip
-    - poetry-core
+    - poetry-core <2.0
   run:
     - python
     - numpy >=1.22,<2.0
     - pillow >=10.3.0
-    - pybsm >=0.10.1
+    - pybsm >=0.10.2
     - setuptools >=65.6.1
     - scikit-image >=0.20
     - smqtk-classifier >=0.19.0
