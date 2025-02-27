@@ -1,5 +1,5 @@
 {% set name = "nrtk" %}
-{% set version = "0.19.2" %}
+{% set version = "0.20.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nrtk-{{ version }}.tar.gz
-  sha256: 122fdf191902a117630e80ca433a4d710f1358cc25d31dd6ac40f3ba3624fe73
+  sha256: b824366a6bf3c49ad15329ac3c049294cee9ff0bd724bc02c58ca97095e867f7
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
