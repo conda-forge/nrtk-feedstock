@@ -39,7 +39,7 @@ requirements:
     - pydantic_settings >=2.2.1
     - kwcoco >=0.2.18
     - types-requests >=2.31.0.10
-    - myst-nb ~=1.1.2
+    - myst-nb >=1.1.2
     - starlette >=0.40.0
     - responses >=0.25.0
     
