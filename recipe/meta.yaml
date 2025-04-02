@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -38,11 +38,7 @@ requirements:
     - pydantic >=2.6.4
     - pydantic-settings >=2.2.1
     - kwcoco >=0.2.18
-    - types-requests >=2.31.0.10
-    - myst-nb >=1.1.2
-    - starlette >=0.40.0
-    - responses >=0.25.0
-    
+
 test:
   imports:
     - nrtk
