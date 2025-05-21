@@ -1,5 +1,5 @@
 {% set name = "nrtk" %}
-{% set version = "0.21.0" %}
+{% set version = "0.21.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nrtk-{{ version }}.tar.gz
-  sha256: 1581d7a6dee6f61018cf02feb3c3be8e04a91f76374d2ccabc414d30be8544cd
+  sha256: c35ae7420ab2a74accc6fc7e8b9c0409766784a2ed7ec6010ef966c056b68228
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -32,7 +32,7 @@ requirements:
     - tqdm >=4.64
     - typing-extensions >=4.5.0
     - pycocotools >=2.0.6
-    - maite >=0.7.1
+    - maite ~=0.7.1
     - fastapi >=0.110.0
     - uvicorn >=0.29.0
     - pydantic >=2.6.4
