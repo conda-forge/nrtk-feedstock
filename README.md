@@ -249,4 +249,5 @@ Feedstock Maintainers
 * [@barry-ravichandran](https://github.com/barry-ravichandran/)
 * [@bjrichardwebster](https://github.com/bjrichardwebster/)
 * [@eveenhuis](https://github.com/eveenhuis/)
+* [@martinduffy1](https://github.com/martinduffy1/)
 
