@@ -1,5 +1,5 @@
 {% set name = "nrtk" %}
-{% set version = "0.21.1" %}
+{% set version = "0.22.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nrtk-{{ version }}.tar.gz
-  sha256: c35ae7420ab2a74accc6fc7e8b9c0409766784a2ed7ec6010ef966c056b68228
+  sha256: 8239b76e341c2dd828944ac3fe0802389cea870e1633507d4f277221e70c7992
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -27,7 +27,7 @@ requirements:
     - scikit-image >=0.20
     - smqtk-classifier >=0.19.0
     - smqtk-core >=0.19
-    - smqtk-detection >=0.19.0
+    - smqtk-detection >=0.22.0
     - smqtk-image-io >=0.17.1
     - tqdm >=4.64
     - typing-extensions >=4.5.0
@@ -38,6 +38,9 @@ requirements:
     - pydantic >=2.6.4
     - pydantic-settings >=2.2.1
     - kwcoco >=0.2.18
+    - scipy >=1.10.0
+    - shapely >=2.0.7
+    - albumentations >=2.0.0
 
 test:
   imports:
