@@ -43,7 +43,7 @@ requirements:
     - shapely >=2.0.7
     - geopandas ~=0.14
     - albumentations >=2.0.0
-    - torch >=2.2.0
+    - pytorch >=2.2.0
     - diffusers >=0.21.0
     - accelerate >=0.20.0
   run_constrained:
