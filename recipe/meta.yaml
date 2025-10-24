@@ -1,5 +1,5 @@
 {% set name = "nrtk" %}
-{% set version = "0.25.0" %}
+{% set version = "0.26.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nrtk-{{ version }}.tar.gz
-  sha256: 2a2ea9ab205927bb682cecb29fe12354077f01725b6da1081f7ae295415107d1
+  sha256: 864aca9ef3d95b8cec834998c59cade22a22e106e08a822fb00861f0bda6e945
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
-  skip: true  # [py>312]
 
 requirements:
   host:
@@ -21,18 +20,20 @@ requirements:
     - poetry-core <2.0
   run:
     - python
-    - numpy >=1.22,<2.0
+    - lazy_loader >=0.4
+    - numpy ~=1.26  # [py<313]
+    - numpy >=2.1  # [py>=313]
     - pillow >=10.3.0
-    - pybsm >=0.12.0
+    - pybsm >=0.13.0
     - setuptools >=78.1.1
     - scikit-image >=0.20
-    - smqtk-classifier >=0.19.0
-    - smqtk-core >=0.19
-    - smqtk-detection >=0.22.0
-    - smqtk-image-io >=0.17.1
+    - smqtk-classifier >=0.20.0
+    - smqtk-core >=0.20
+    - smqtk-detection >=0.23.0
+    - smqtk-image-io >=0.18.0
     - tqdm >=4.64
     - typing-extensions >=4.5.0
-    - pycocotools >=2.0.6
+    - pycocotools >=2.0.10
     - maite ~=0.8.2
     - fastapi >=0.110.0
     - uvicorn >=0.29.0
@@ -46,6 +47,8 @@ requirements:
     - pytorch >=2.2.0
     - diffusers >=0.21.0
     - accelerate >=0.20.0
+    - transformers >=4.52.1
+    - protobuf >=3.2
   run_constrained:
     - datasets >=3.3.2
     - matplotlib >=3.7.1
@@ -53,9 +56,7 @@ requirements:
     - tabulate >=0.9.0
     - torchmetrics >=1.0.0
     - torchvision >=0.21.0
-    - transformers >=4.52.1
     - ultralytics >=8.3.85
-    - xaitk-jatic >=0.7.0
     - jupytext >=1.16.7
 
 test:
@@ -100,7 +101,7 @@ outputs:
         - pip check
       requires:
         - pip
-        - libopencv *=headless*  # [not win]
+        - libopencv >=4.6.0 *headless*  # [not win]
 
 about:
   home: https://pypi.org/project/nrtk/
