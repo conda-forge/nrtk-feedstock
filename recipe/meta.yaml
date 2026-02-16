@@ -1,5 +1,5 @@
 {% set name = "nrtk" %}
-{% set version = "0.26.0" %}
+{% set version = "0.27.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,57 +7,48 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nrtk-{{ version }}.tar.gz
-  sha256: 864aca9ef3d95b8cec834998c59cade22a22e106e08a822fb00861f0bda6e945
+  sha256: f4c1126ac3515cbff5a780aa3e28108e600c0077c784fa0a755042227f2f5250
 
 build:
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
-    - poetry-core <2.0
+    - poetry-core >=2.2
   run:
-    - python
+    - python >={{ python_min }}
     - lazy_loader >=0.4
-    - numpy ~=1.26  # [py<313]
-    - numpy >=2.1  # [py>=313]
-    - pillow >=10.3.0
-    - pybsm >=0.13.0
-    - setuptools >=78.1.1
-    - scikit-image >=0.20
+    - numpy >=1.26
     - smqtk-classifier >=0.20.0
-    - smqtk-core >=0.20
+    - smqtk-core >=0.21
     - smqtk-detection >=0.23.0
     - smqtk-image-io >=0.18.0
-    - tqdm >=4.64
-    - typing-extensions >=4.5.0
+    - tqdm >=4.66.3
     - pycocotools >=2.0.10
-    - maite ~=0.8.2
+    - setuptools >=78.1.1
+    - typing-extensions >=4.5.0
+    - nrtk-albumentations >=2.2.1
+    - pybsm >=0.14.3
+    - maite >=0.9.2,<0.10.0
+    - kwcoco >=0.2.18
+    - pillow >=12.1.1
+    - click >=8.0.0
     - fastapi >=0.110.0
     - uvicorn >=0.29.0
     - pydantic >=2.6.4
     - pydantic-settings >=2.2.1
-    - kwcoco >=0.2.18
+    - scikit-image >=0.20
     - scipy >=1.10.0
-    - shapely >=2.0.7
-    - geopandas ~=0.14
-    - albumentations >=2.0.0
-    - pytorch >=2.2.0
+    - numba >=0.56.4
+    - pytorch >=2.6.0
     - diffusers >=0.21.0
     - accelerate >=0.20.0
-    - transformers >=4.52.1
-    - protobuf >=3.2
-  run_constrained:
-    - datasets >=3.3.2
-    - matplotlib >=3.7.1
-    - numba >=0.56.4
-    - tabulate >=0.9.0
-    - torchmetrics >=1.0.0
-    - torchvision >=0.21.0
-    - ultralytics >=8.3.85
-    - jupytext >=1.16.7
+    - transformers >=4.53.0
+    - protobuf >=6.33.5
 
 test:
   imports:
@@ -66,42 +57,7 @@ test:
     - pip check
   requires:
     - pip
-
-outputs:
-  - name: nrtk
-  - name: nrtk-graphics
-    requirements:
-      host:
-        - python
-      run:
-        - python
-        - py-opencv >=4.6.0
-        - {{ pin_subpackage('nrtk', exact=True) }}
-    test:
-      imports:
-        - nrtk
-        - cv2
-      commands:
-        - pip check
-      requires:
-        - pip
-  - name: nrtk-headless
-    requirements:
-      host:
-        - python
-      run:
-        - python
-        - opencv >=4.6.0
-        - {{ pin_subpackage('nrtk', exact=True) }}
-    test:
-      imports:
-        - nrtk
-        - cv2
-      commands:
-        - pip check
-      requires:
-        - pip
-        - libopencv >=4.6.0 *headless*  # [not win]
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/nrtk/
