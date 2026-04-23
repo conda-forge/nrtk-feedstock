@@ -60,6 +60,7 @@ test:
     - pip
     - python {{ python_min }}
     - nrtk-albumentations >=2.2.1
+    - simsimd >=5.9.2
 
 about:
   home: https://pypi.org/project/nrtk/
