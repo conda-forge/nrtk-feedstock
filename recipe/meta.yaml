@@ -58,6 +58,7 @@ test:
   requires:
     - pip
     - python {{ python_min }}
+    - nrtk-albumentations >=2.2.1
 
 about:
   home: https://pypi.org/project/nrtk/
