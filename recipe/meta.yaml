@@ -1,5 +1,5 @@
 {% set name = "nrtk" %}
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/nrtk-{{ version }}.tar.gz
-  sha256: 4ce038ce817b7f0cefdccd081342fc2678ab74fc2f1648b13e6946d1c057cba6
+  sha256: 56408755e19bfdb01fd364f236bc6d8b75df29757dac7de85f2b50128791bde6
 
 build:
   noarch: python
