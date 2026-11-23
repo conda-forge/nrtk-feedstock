@@ -1,5 +1,5 @@
 {% set name = "nrtk" %}
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/nrtk-{{ version }}.tar.gz
-  sha256: 4ce038ce817b7f0cefdccd081342fc2678ab74fc2f1648b13e6946d1c057cba6
+  sha256: 56408755e19bfdb01fd364f236bc6d8b75df29757dac7de85f2b50128791bde6
 
 build:
   noarch: python
@@ -29,6 +29,7 @@ requirements:
     - tqdm >=4.66.3
     - pycocotools >=2.0.10
     - typing-extensions >=4.5.0
+  run_constrained:
     - nrtk-albumentations >=2.2.1
     - simsimd >=5.9.2,<7
     - pybsm >=0.16.0
@@ -40,6 +41,8 @@ requirements:
     - uvicorn >=0.29.0
     - pydantic >=2.6.4
     - pydantic-settings >=2.14.2
+    - python-json-logger >=3.0.0
+    - datamaite >=0.7.0
     - scikit-image >=0.20
     - scipy >=1.10.0
     - hcipy >=0.7.0
